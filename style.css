@@ -1,0 +1,425 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.phone{
+    text-align: right;
+    margin-top: -45px;
+}
+.phoneimg{
+    display: block;        /* make sure margins apply predictably */
+    margin: -65px 890px 1rem; /* moves the img up by 20px, centers it horizontally */
+    max-width: 80%;
+    height: auto;
+}
+
+/* Header */
+header {
+    background: #005792;
+    color: #fff;
+    padding: 20px 0;         /* unified padding */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+    nav {
+      margin-top: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd57;
+    }
+
+    /* new dropdown styles */
+    nav ul > li {
+      position: relative;       /* anchor for the dropdown */
+    }
+
+    nav ul li ul {
+      position: absolute;
+      top: 100%;                /* directly below the parent li */
+      left: 0;
+      background: #333;
+      padding: 0.5rem 0;
+      list-style: none;
+      display: none;            /* hide by default */
+      min-width: 150px;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 9999;
+    }
+
+    nav ul li:hover > ul,
+    nav ul li:focus-within > ul {
+      display: block;           /* show on hover/focus */
+    }
+
+    nav ul li ul li {
+      margin: 0;
+    }
+
+    nav ul li ul li a {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    nav ul li ul li a:hover {
+      background: #444;
+    }
+/* Hero Section (blurred background) */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 100px 20px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('hero-bg.jpg') no-repeat center/cover;
+    filter: blur(8px);
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+.hero h2,
+.hero p {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: #ffdd57;
+    color: #333;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ffc107;
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+}
+
+.services1{
+          /* Choose your font */
+      font-family: 'Oswald', sans-serif;
+
+      /* Strong weight, uppercase */
+      font-weight: 700;
+      text-transform: uppercase;
+
+      /* Size it up */
+      font-size: 3rem;
+
+      /* Space the letters out */
+      letter-spacing: 0.1em;
+
+      /* Your brand color */
+      color: #4a8bda;
+
+      /* Optional: add a little shadow for pop */
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+
+      /* Remove default spacing if needed */
+      margin: 1em 0;
+    }
+
+.services ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.projects p,
+.aboutus{font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      color: #4a8bda;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+      margin: 1em 0;
+    }
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.call{font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 230%;
+      letter-spacing: 0.1em;
+      color: #4a8bda;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+      margin: 1em 0;
+    }
+    .card {
+      float: right;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      max-width: 320px;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    
+    .card img {
+        display: block;     /* make it respect auto‑margins */
+        margin: 0 auto;     /* top/bottom 0, left/right auto */
+        width: auto;        /* or whatever max‑width you like */
+        max-width: 100%;    /* keep it responsive */
+    }
+    
+
+    .card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #4a8bda;
+      margin: 0 0 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #333;
+      margin: 0 0 1.25rem;
+    }
+
+    .card .btn {
+      display: inline-block;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.5rem;
+      background: #4a8bda;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+    .card .btn:hover {
+      background: #3a74b8;
+    }
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #003f63;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffdd57;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Zoom Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+/* Lightbox overlay */
+#lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+/* The enlarged image */
+#lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Navigation container */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Arrows */
+.lightbox-prev,
+.lightbox-next {
+  pointer-events: auto;
+  color: #fff;
+  font-size: 3rem;
+  padding: 0 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  color: #ffdd57;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  text-decoration: none;
+}
+.logo:hover {
+  /* optional hover */
+  color: #ffdd57;
+}
