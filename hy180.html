@@ -13,16 +13,74 @@ body {
     color: #333;
     background-color: #f8f9fa;
 }
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin: 0;
-}
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0px 20px;
+}
+@media (max-width: 600px) {
+  .container {
+    width: 90%;           /* full‐bleed on small screens */
+    padding: 0 10px;       /* small side padding */
+    margin: 0 auto;        /* center if it ever shrinks */
+    
+    /* if you want to center child elements too: */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;    /* for text/content */
+  }
+
+  /* Optional: if you have block-level children you want to limit */
+  .container > * {
+    max-width: 100%;       /* ensure they don’t overflow */
+  }
+}
+/* CSS */
+.phone-container {
+  /* replicate your original vertical offset */
+  margin-top: -75px;
+
+  /* right‑align its contents and keep them on one line */
+  display: flex;               
+  justify-content: flex-end;   /* pushes everything to the right */
+  align-items: center;         /* vertical centering */
+  white-space: nowrap; 
+  /* if you need it to flow inline with other text: */
+  /* display: inline-flex; */
+}
+
+.phone {
+  margin: 0;       /* remove default h1 margins */
+}
+
+.phoneimg {
+  width: 40px;
+  height: 40px;
+  margin-left: 0.5rem;  /* space between text and icon */
+}
+@media screen and (max-width: 480px) {
+  .phone-container {
+    display: flex;            /* still flex, but allow wrap */
+    flex-wrap: wrap;          /* allow items to move to the next line */
+    justify-content: center;  /* center on narrow viewports */
+    margin-top: -30px;            /* reset if negative pushes it off-screen */
+    gap: 0.25rem;             /* tighter spacing */
+  }
+
+  .phone {
+    margin: 0;
+    /* shrink text for small screens */
+    font-size: 1rem;          
+    line-height: 1.2;
+  }
+
+  .phoneimg {
+    /* shrink icon proportionally */
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* Header */
@@ -33,24 +91,38 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.logo {
+    font-size: 2rem;
+    font-weight:100px;
+    margin: 0;
 }
-.phone{
-    text-align: right;
-    margin-top: -45px;
-}
-.phoneimg{
-    display: block;        /* make sure margins apply predictably */
-    margin: -65px 890px 1rem; /* moves the img up by 20px, centers it horizontally */
-    max-width: 80%;
-    height: auto;
+  .nav-links {
+  position: fixed;
+  top: 50px;}
+  @media (max-width: 600px) {
+  .nav-links {
+    margin-top: -20px;
+    gap: 30px;
+    position: static;         /* let it flow in the normal document */
+    top: auto;                /* reset the fixed positioning */
+    display: flex;            /* enable flexbox */
+    flex-direction: row;      /* lay items out in a row */
+    flex-wrap: nowrap;        /* prevent wrapping to the next line */
+    justify-content: space-around; /* spread them evenly */
+    align-items: center;      /* vertically center if they’re taller */
+    width: 100%;              /* fill the screen width */
+    padding: -10px 0;          /* some vertical breathing room */
+    z-index: 9999;             /* keep it on top if needed */
+  }
+
+  .nav-links a {
+    flex: 1;                  /* make all links share available space */
+    text-align: center;
+    /* adjust padding/margins as needed */
+  }
 }
     nav {
-      margin-top: 15px;
+      margin-top: 5px;
     }
 
     nav ul {
@@ -88,7 +160,7 @@ header {
       min-width: 150px;
       border-radius: 4px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 9999;
+      z-index: 999999;
     }
 
     nav ul li:hover > ul,
