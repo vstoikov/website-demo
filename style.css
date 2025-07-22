@@ -12,18 +12,32 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0px 20px;
 }
-.phone{
-    text-align: right;
-    margin-top: -45px;
+/* CSS */
+.phone-container {
+  /* replicate your original vertical offset */
+  margin-top: -70px;
+
+  /* right‑align its contents and keep them on one line */
+  display: flex;               
+  justify-content: flex-end;   /* pushes everything to the right */
+  align-items: center;         /* vertical centering */
+
+  /* if you need it to flow inline with other text: */
+  /* display: inline-flex; */
 }
-.phoneimg{
-    display: block;        /* make sure margins apply predictably */
-    margin: -65px 890px 1rem; /* moves the img up by 20px, centers it horizontally */
-    max-width: 80%;
-    height: auto;
+
+.phone {
+  margin: 0;       /* remove default h1 margins */
 }
+
+.phoneimg {
+  width: 40px;
+  height: 40px;
+  margin-left: 0.5rem;  /* space between text and icon */
+}
+
 
 /* Header */
 header {
@@ -35,7 +49,7 @@ header {
 
 .logo {
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight:700;
     margin: 0;
 }
     nav {
