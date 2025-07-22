@@ -1,1 +1,1 @@
-permalink: pretty
+permalink: /:title/   # e.g. home.html → example.com/home/
