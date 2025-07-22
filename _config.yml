@@ -1,1 +1,4 @@
-permalink: /:title/   # e.g. home.html → example.com/home/
+# _config.yml
+title: SondiBG
+description: “…”        # optional
+permalink: /:title/      # strip “.html” and add trailing slash
