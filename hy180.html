@@ -196,7 +196,59 @@ header {
       color: #4a8bda;
       text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
       margin: 1em 0; }
+    @media (max-width: 600px) {
+  /* Center all sections’ contents */
+  body,
+  section,
+  .features,
+  .specs,
+  .gallery {
+    text-align: center;
+    padding-left: 1rem;       /* small side padding for breathing room */
+    padding-right: 1rem;
+  }
 
+  /* Stack and center the hero */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .hero .hero-text,
+  .hero .hero-img {
+    flex: none;
+    width: 100%;
+    padding: 0;
+  }
+  .hero .hero-text {
+    margin-bottom: 20px;
+  }
+  .specsdesc{
+    font-size: 40px;
+    text-align: center;
+  }
+
+  /* Center lists */
+  .features ul {
+    margin: 0 auto;           /* center the UL itself */
+    display: inline-block;    /* shrink‑to‑fit so bullets stay inward */
+    text-align: left;         /* keep bullets on the left within the list */
+  }
+
+  /* Center tables */
+  table {
+    margin: 20px auto;        /* auto‑side margins to center */
+    width: 100%;              /* still full‑width on mobile */
+  }
+
+  /* Center gallery grid & images */
+  .gallery-images {
+    justify-items: center;    /* center grid cells if their content is narrower */
+  }
+  .gallery-images img {
+    margin: 0 auto;           /* center each image if it’s not full width */
+  }
+}
     /* Sections */
     section { margin-bottom: 60px; }
     h2 {
@@ -371,7 +423,7 @@ header {
 
       <!-- Specifications Section -->
       <section id="specs">
-        <h2>Спецификации</h2>
+        <h2 class="specsdesc">Спецификации</h2>
         <table>
           <thead>
             <tr>
