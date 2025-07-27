@@ -21,11 +21,19 @@ body {
     margin: 0 auto;
     padding: 0px 20px;
 }
+
 @media (max-width: 600px) {
+    header .container {
+    max-width: none;   /* override any later .container rules */
+    width: 100%;       /* truly full‑bleed on mobile */
+    padding: 0 10px;   /* optional side padding */
+    }
   .container {
+    max-width: none;
     width: 90%;           /* full‐bleed on small screens */
     padding: 0 10px;       /* small side padding */
     margin: 0 auto;        /* center if it ever shrinks */
+    
     
     /* if you want to center child elements too: */
     display: flex;
@@ -40,17 +48,34 @@ body {
   }
 }
 /* CSS */
-.phone-container {
-  /* replicate your original vertical offset */
-  margin-top: -75px;
+header {
+  position: relative;      /* establish a stacking context */
+  z-index: 1000;           /* sit on top of everything */
+  background: #005792;
+  color: #fff;
+  padding: 20px 0;         /* controls the height of the header */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-  /* right‑align its contents and keep them on one line */
-  display: flex;               
-  justify-content: flex-end;   /* pushes everything to the right */
-  align-items: center;         /* vertical centering */
-  white-space: nowrap; 
-  /* if you need it to flow inline with other text: */
-  /* display: inline-flex; */
+/* position the phone bar absolutely within the header */
+.phone-container {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+@media screen and (max-width: 600px) {
+  .phone-container {
+    position: static;      /* let it flow under the nav/logo for very narrow phones */
+    transform: none;
+    margin-top: 10px;      /* small gap below nav */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
 }
 
 .phone {
@@ -62,7 +87,7 @@ body {
   height: 40px;
   margin-left: 0.5rem;  /* space between text and icon */
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .phone-container {
     display: flex;            /* still flex, but allow wrap */
     flex-wrap: wrap;          /* allow items to move to the next line */
@@ -104,22 +129,15 @@ header {
   margin-top: -10px;}
   @media (max-width: 600px) {
   .nav-links {
-    margin-top: -20px;
-    gap: 30px;
-    position: static;         /* let it flow in the normal document */
-    top: auto;                /* reset the fixed positioning */
-    display: flex;            /* enable flexbox */
-    flex-direction: row;      /* lay items out in a row */
-    flex-wrap: nowrap;        /* prevent wrapping to the next line */
-    justify-content: space-around; /* spread them evenly */
-    align-items: center;      /* vertically center if they’re taller */
-    width: 100%;              /* fill the screen width */
-    padding: 0px 0;          /* some vertical breathing room */
-    z-index: 9999;             /* keep it on top if needed */
+    flex-wrap: wrap;       /* let links move to a new line */
+    gap: 10px;             /* smaller gap so more fit on one row */
+    margin: 0;             /* remove any negative lift */
+    width: 100%;           /* still full width of its container */
   }
 
   .nav-links a {
-    flex: 1;                  /* make all links share available space */
+    flex: 0 1 auto;                  /* make all links share available space */
+    background: transparent;
     text-align: center;
     /* adjust padding/margins as needed */
   }
