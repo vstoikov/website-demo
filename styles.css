@@ -97,19 +97,17 @@ header {
   @media (max-width: 600px) {
   .nav-links {
     margin-top: -20px;
-    
+    gap: 30px;
     position: static;         /* let it flow in the normal document */
     top: auto;                /* reset the fixed positioning */
     display: flex;            /* enable flexbox */
     flex-direction: row;      /* lay items out in a row */
     flex-wrap: nowrap;        /* prevent wrapping to the next line */
-    justify-content: space-evenly;
-    flex: 1; /* spread them evenly */
+    justify-content: space-around; /* spread them evenly */
     align-items: center;      /* vertically center if they’re taller */
     width: 100%;              /* fill the screen width */
     padding: 0px 0;          /* some vertical breathing room */
     z-index: 9999;             /* keep it on top if needed */
-
   }
 
   .nav-links a {
@@ -122,26 +120,12 @@ header {
       margin-top: 5px;
     }
 
-nav ul {
-  display: flex;
-  flex-wrap: nowrap;
-
-  padding: 0;
-  margin: 5px 0 0;
-  list-style: none;
-  gap: 20px;
-  scrollbar-width: thin;   /* for Firefox */
-}
-
-nav ul::-webkit-scrollbar {
-  height: 6px;
-}
-
-nav ul::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.5);
-  border-radius: 3px;
-}
-
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
 
     nav a {
       color: #fff;
