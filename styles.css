@@ -194,7 +194,7 @@ nav ul::-webkit-scrollbar-thumb {
     /* Hero */
     .hero { display: flex; flex-wrap: wrap; align-items: center; margin: 40px 0; }
     .hero .hero-text { flex: 1 1 400px; padding-right: 20px; }
-    .hero .hero-img { flex: 1 1 400px; }
+    .hero .hero-img { flex: 1 1 300px; }
     .hero h1 {       font-family: 'Oswald', sans-serif;
       font-weight: 700;
       text-transform: uppercase;
