@@ -49,3 +49,16 @@
       if (e.key === 'Escape')     closeLightbox();
     });
   })();
+const items = document.querySelectorAll('nav ul li');
+items.forEach(li => {
+  let timeout;
+  li.addEventListener('mouseenter', () => {
+    clearTimeout(timeout);
+    li.querySelector('ul').style.display = 'block';
+  });
+  li.addEventListener('mouseleave', () => {
+    timeout = setTimeout(() => {
+      li.querySelector('ul').style.display = 'none';
+    }, 100); // 1 second
+  });
+});
