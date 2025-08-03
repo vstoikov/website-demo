@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Професионални сондажни машини за всяка ваша нужда!">
     <title>SondiBG Сондажни Машини , компресори и консумативи.</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -128,62 +128,6 @@
       <span class="lightbox-next">›</span>
     </div>
   </div>
-<script>
-  (function() {
-    const overlay = document.getElementById('lightbox-overlay');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = overlay.querySelector('.lightbox-close');
-    const prevBtn  = overlay.querySelector('.lightbox-prev');
-    const nextBtn  = overlay.querySelector('.lightbox-next');
-
-    // Grab all gallery images
-    const galleryImgs = Array.from(
-      document.querySelectorAll('.project-gallery img')
-    );
-    let currentIndex = 0;
-
-    function openLightbox(idx) {
-      currentIndex = idx;
-      lightboxImg.src = galleryImgs[idx].src;
-      overlay.style.display = 'flex';
-    }
-
-    function closeLightbox() {
-      overlay.style.display = 'none';
-    }
-
-    function showPrev() {
-      currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
-      lightboxImg.src = galleryImgs[currentIndex].src;
-    }
-
-    function showNext() {
-      currentIndex = (currentIndex + 1) % galleryImgs.length;
-      lightboxImg.src = galleryImgs[currentIndex].src;
-    }
-
-    // Attach handlers
-    galleryImgs.forEach((img, i) => {
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', () => openLightbox(i));
-    });
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', showPrev);
-    nextBtn.addEventListener('click', showNext);
-
-    // Close when clicking outside the image
-    overlay.addEventListener('click', e => {
-      if (e.target === overlay) closeLightbox();
-    });
-
-    // Keyboard: ← → Esc
-    document.addEventListener('keydown', e => {
-      if (overlay.style.display !== 'flex') return;
-      if (e.key === 'ArrowLeft')  showPrev();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'Escape')     closeLightbox();
-    });
-  })();
-</script>
+  <script src="index.js"></script>
 </body>
 </html>
