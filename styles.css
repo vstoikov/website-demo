@@ -9,9 +9,17 @@ body {
   padding-bottom: 1px;      /* trap any collapsed bottom margin */
 }
 
-/* If you’d rather remove margins on header/footer: */
 header, footer {
-  margin: 0;
+  width: 100vw;          /* full viewport width */
+  margin: 0;             /* cancel any auto-centering */
+  padding: 20px 0;       /* as before */
+  background: #005792;   /* your blue */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;    /* if you’re also using negative margins elsewhere */
+  left: 50%;             /* shift back into place */
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 body {
@@ -50,8 +58,8 @@ body {
 /* CSS */
 .phone-container {
   /* replicate your original vertical offset */
-  margin-top: -75px;
-
+  top: -75px;
+  
   /* right‑align its contents and keep them on one line */
   display: flex;               
   justify-content: flex-end;   /* pushes everything to the right */
