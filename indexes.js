@@ -1,0 +1,51 @@
+  (function() {
+    const overlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = overlay.querySelector('.lightbox-close');
+    const prevBtn  = overlay.querySelector('.lightbox-prev');
+    const nextBtn  = overlay.querySelector('.lightbox-next');
+    const galleryImgs = Array.from(document.querySelectorAll('.gallery-images img'));
+    let currentIndex = 0;
+
+    function openLightbox(idx) {
+      currentIndex = idx;
+      lightboxImg.src = galleryImgs[idx].src;
+      overlay.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      overlay.style.display = 'none';
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
+      lightboxImg.src = galleryImgs[currentIndex].src;
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImgs.length;
+      lightboxImg.src = galleryImgs[currentIndex].src;
+    }
+
+    // attach click handlers
+    galleryImgs.forEach((img, i) => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => openLightbox(i));
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener ('click', showPrev);
+    nextBtn.addEventListener ('click', showNext);
+
+    // also close on overlay‑background click (but not if you click the img or arrows)
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) closeLightbox();
+    });
+
+    // keyboard navigation
+    document.addEventListener('keydown', e => {
+      if (overlay.style.display !== 'flex') return;
+      if (e.key === 'ArrowLeft')  showPrev();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'Escape')     closeLightbox();
+    });
+  })();
