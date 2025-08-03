@@ -66,3 +66,26 @@ items.forEach(li => {
     }, 100); // 1 second
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const elems = document.querySelectorAll('.hero .container > *');
+  const timing = {
+    duration: 600,
+    easing: 'ease-out',
+    fill: 'forwards'
+  };
+
+  elems.forEach((el, i) => {
+    // initial state
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(20px)';
+
+    // animate with a staggered delay
+    el.animate([
+      { opacity: 0, transform: 'translateY(20px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], {
+      ...timing,
+      delay: i * 200  // 0ms, 200ms, 400ms…
+    });
+  });
+});

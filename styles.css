@@ -117,7 +117,7 @@ header {
   .nav-links {
   position: static;
   top: 10px;
-  margin-top: -10px;}
+  margin-top: -65px;}
   @media (max-width: 600px) {
   .nav-links {
     margin-top: -20px;
