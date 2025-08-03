@@ -194,7 +194,11 @@ nav ul::-webkit-scrollbar-thumb {
     /* Hero */
     .hero { display: flex; flex-wrap: wrap; align-items: center; margin: 40px 0; }
     .hero .hero-text { flex: 1 1 400px; padding-right: 20px; }
-    .hero .hero-img { flex: 1 1 400px; }
+    .hero-photo {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    }
     .hero h1 {       font-family: 'Oswald', sans-serif;
       font-weight: 700;
       text-transform: uppercase;
@@ -222,7 +226,9 @@ nav ul::-webkit-scrollbar-thumb {
     margin: 20px 0;
   }
   .hero .hero-text,
-  .hero .hero-img { flex: 1 1 200px; }
+  .hero .hero-img {flex: 0 0 90%; 
+    max-width: 90%;
+  }
   .hero .hero-text {
     margin-bottom: 20px;
   }
@@ -231,7 +237,7 @@ nav ul::-webkit-scrollbar-thumb {
 }
 
   .specsdesc{
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
   }
 
