@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,10 +41,18 @@
       <ul class="dropdown">
         <li><a href="./hy180">HY-180</a></li>
         <li><a href="./hy280">HY-280</a></li>
+        <li><a href="./profesional">Професионал+</a></li>
+        <li><a href="./hw60">HW-60 Компресор</a></li>
       </ul>
     </li>
-    <li><a href="./#services">Оферти</a></li>
-  </ul>
+        <li class="has-dropdown">
+      <a href="#more" aria-haspopup="true">▼ Консумативи</a>
+      <ul class="dropdown">
+        <li><a href="./glavi">Глави</a></li>
+        <li><a href="./trabi">Тръби</a></li>
+        <li><a href="./pompi">Помпи</a></li>
+      </ul>
+    </li>
 </nav>
     </header>
 
@@ -55,8 +64,7 @@
                 <a href="#contact" class="btn-primary">Свържете се с нас!</a>
             </div>
         </section>
-
-        <section id="services" class="services">
+        <section id="services" class="services scroll-reveal">
             <div class="card">
                 <img src="images/drill8.JPG" style="width:200px; height:200px">
                 <h3>HY-180G</h3>
@@ -73,8 +81,83 @@
                     <li>За налични машини и ценоразпис натисни <a href="list">ТУК!</a></li>
                 </ul>
         </section>
-
-        <section id="about" class="about">
+        <br>
+        <br>
+        <br>
+    <section id="more" class="section scroll-reveal">
+    <h1>Машини за сондиране</h1>
+    <div class="cards">
+      
+      <div class="card">
+        <img src="images/hy-180g.JPG" alt="Сондажни машини на ремарке">
+        <div class="card-content">
+          <h2>Сондажни машина HY-180<br> 33 500лв.</h2>
+        </div>
+        <div class="card-footer">
+          <a href="#more1">Виж повече &rsaquo;</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="images/HY-280.JPG" alt="Сондажни машини на камион">
+        <div class="card-content">
+          <h2>Сондажна машина HY-280 <br>46 000лв.</h2>
+        </div>
+        <div class="card-footer">
+          <a href="#more2">Виж повече &rsaquo;</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="images/professional.JPG" alt="Верижни сондажни машини">
+        <div class="card-content">
+          <h2>Сондажна машина Професионал+ <br>78 000лв.</h2>
+        </div>
+        <div class="card-footer">
+          <a href="#more3">Виж повече &rsaquo;</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <section class="section scroll-reveal" >
+    <h1>Консумативи</h1>
+    <div class="cards">
+      
+      <div class="card">
+        <img src="images/glava1.JPG" alt="глава">
+        <div class="card-content">
+          <h2>Сондажни глави</h2>
+        </div>
+        <div class="card-footer">
+          <a href="#more1">Виж повече &rsaquo;</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="images/trabi.JPG" alt="trabi">
+        <div class="card-content">
+          <h2>Сондажни тръби</h2>
+        </div>
+        <div class="card-footer">
+          <a href="#more2">Виж повече &rsaquo;</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="images/pompa.JPG" alt="pompa">
+        <div class="card-content">
+          <h2>Помпи за мръсна вода</h2>
+        </div>
+        <div class="card-footer">
+          <a href="#more3">Виж повече &rsaquo;</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+        <section id="about" class="about scroll-reveal">
             <div class="container">
                 <h3 class="aboutus">Кои сме ние?</h3>
                 <p>"Тони Транс 2004" ООД е бизнес , който създадохме и вече 21 години продължаваме да се занимаваме професионално и на възможно най-високо ниво , като се опитваме винаги да сме пред конкуренцията , предлагаме услуги за внос и транспорт , като винаги към нас след сключена сделка може да очаквате перфектно обслужване при възникване на проблем! </p>
@@ -100,19 +183,7 @@
 
         <section id="contact" class="contact">
             <div class="container">
-                <h3 class="call">Изпрати запитване или <br>позвъни на номер 0888523915</h3>
-                <form action="/submit" method="POST">
-                    <label for="name">Име</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Имейл</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Съобщение</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <button type="submit" class="btn-primary">Изпрати!</button>
-                </form>
+                <h3 class="call">За връзка с нас <br>моля позвънете на <br>номер 0888523915</h3>
             </div>
         </section>
     </main>

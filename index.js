@@ -89,3 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll('.scroll-reveal');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target); // optional: only animate once
+      }
+    });
+  }, {
+    threshold: 0.6 // adjust if needed
+  });
+
+  revealElements.forEach(el => {
+    observer.observe(el);
+  });
+});
+
