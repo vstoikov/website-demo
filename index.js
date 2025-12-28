@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, {
-    threshold: 0.6 // adjust if needed
+    threshold: 0 // adjust if needed
   });
 
   revealElements.forEach(el => {
